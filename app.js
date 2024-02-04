@@ -259,6 +259,6 @@ function closeFullScreenModal() {
 // Toggle dark background on button click or any other event
 document.getElementById('toggle-dark-mode-btn').addEventListener('click', function () {
     document.body.classList.toggle('dark-background');
+    updateFullScreenButtonVisibility(); // Update full-screen button visibility
 });
-
 
