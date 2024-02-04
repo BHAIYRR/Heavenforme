@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Storage</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+
+    <h1 data-translate>Photo Storage</h1>
+    <main>
+
+        <form id="upload-form">
+            <progress value="0" max="100" class="upload-progress"></progress>
+            <label for="photo" data-translate>Select Photos:</label>
+            <input type="file" id="photo" name="photos[]" multiple accept="image/*">
+            <button type="button" onclick="uploadFiles()" title="Upload Photo">Upload</button>
+            <button id="select-all-btn">Select All</button>
+            <button id="delete-btn" disabled title="Delete Selected Photos">Delete Selected Photos</button>
+            <button id="toggle-dark-mode-btn"> Dark Mode</button>
+            
+
+        </form>
+        <div id="photos" class="photo-container"></div>
+        <div id="loading-spinner"></div>
+        <div class="modal" id="fullScreenModal">
+            <button class="navigation-btn" id="prevBtn" onclick="navigateFullScreenModal('ArrowLeft')">&#9665;</button>
+            <img id="fullScreenImage" class="modal-content" data-index="0">
+            <button class="navigation-btn" id="nextBtn" onclick="navigateFullScreenModal('ArrowRight')">&#9655;</button>
+            <button class="close-btn" onclick="closeFullScreenModal()">×</button>
+        </div>
+
+    </main>
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-storage.js"></script>
+    
+<script src="https://cdn.cognitive.services/azure-cognitiveservices-translator/3.0/cognitiveservices.translator.min.js"></script>
+
+    <script src="app.js"></script>
+<!-- Using CDN -->
+<script src="https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js"></script>
+
+<!-- Initialize Firebase -->
+<script>
+  var firebaseConfig = {
+    // Your Firebase configuration details
+    
+    apiKey: "AIzaSyC7D7TlhKlfG4qEScY8SGN_wvm5TGZNXQk",
+    authDomain: "formeheaven-d9bb7.firebaseapp.com",
+    projectId: "formeheaven-d9bb7",
+    storageBucket: "formeheaven-d9bb7.appspot.com",
+    messagingSenderId: "296689944479",
+    appId: "1:296689944479:web:f028c86696f9506b2a9faa",
+    measurementId: "G-9BZVGWEXCM"
+  };
+  
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+</body>
+
+</html>
